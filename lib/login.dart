@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tcc_mobile/cadastrar.dart';
 import 'package:tcc_mobile/homepage.dart';
 import 'package:tcc_mobile/esqueci.dart'; // Add this import
 
@@ -104,10 +105,10 @@ class LoginState extends State<Login> {
               children: [
                 Checkbox(
                   checkColor: const Color.fromARGB(255, 255, 255, 255),
-                  value: _isChecked, // Update this line
+                  value: _isChecked,
                   onChanged: (value) {
                     setState(() {
-                      _isChecked = value!; // Update this line
+                      _isChecked = value!;
                     });
                   },
                 ),
@@ -158,13 +159,14 @@ class LoginState extends State<Login> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => EsqueciSenha()),
+                MaterialPageRoute(builder: (context) => Cadastro()),
               );
             },
             child: Text(
               'Cadastrar',
               style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255), decoration: TextDecoration.underline),
-            )
+            ),
+
           )
           ],
         ),

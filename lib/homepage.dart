@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tcc_mobile/ajuda.dart';
 import 'package:tcc_mobile/config.dart';
+import 'package:tcc_mobile/exercicios.dart';
 import 'package:tcc_mobile/login.dart';
+import 'package:tcc_mobile/perfil.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -76,17 +78,24 @@ class _HomepageState extends State<Homepage> {
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color(0xFF3E3E3E),
         currentIndex: 1,
+        onTap: (index){
+          if(index == 0){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Treino()));
+          }else if(index == 1){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage()));
+          }
+          else if(index == 2){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Perfil()));
+          }
+
+        },
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.fitness_center),
             label: 'Exercícios',
           ),
-          /*BottomNavigationBarItem(
-            icon: Icon(Icons.sports_gymnastics),
-            label: 'Exercícios',
-          ),*/
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home,),
             label: 'Home',
           ),
           BottomNavigationBarItem(
