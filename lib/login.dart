@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tcc_mobile/homepage.dart';
+import 'package:tcc_mobile/esqueci.dart'; // Add this import
 
 bool isHidden = true;
 
@@ -11,6 +12,8 @@ class Login extends StatefulWidget {
 }
 
 class LoginState extends State<Login> {
+  bool _isChecked = false; // Add this line
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +22,7 @@ class LoginState extends State<Login> {
         child: Column(
 
           children: [
-            SizedBox(height: 150),
+            SizedBox(height: 100),
             Image.asset('assets/images/LOGO.jpg', width: 200),
             const SizedBox(height: 20),
             Text(
@@ -98,11 +101,13 @@ class LoginState extends State<Login> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Checkbox(value: false, onChanged: (value) {
-                  if (value == true) {
-                    Checkbox(value: true, onChanged: (value) {});
-                  } //fazer depois
-                }
+                Checkbox(
+                  value: _isChecked, // Update this line
+                  onChanged: (value) {
+                    setState(() {
+                      _isChecked = value!; // Update this line
+                    });
+                  },
                 ),
                 SizedBox(height: 10),
                 Text('Remember me', style: TextStyle(color: Colors.black)), //fazer depois
@@ -131,11 +136,34 @@ class LoginState extends State<Login> {
                 ],
             )
           ),
-
+          
           SizedBox(height: 5),
-          Text('Esqueci minha senha', style: TextStyle(color: Colors.black)),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => EsqueciSenha()), // Navigator.push pra esqueci a senha
+              );
+            },
+            child: Text(
+              'Esqueci minha senha',
+              style: TextStyle(color: Colors.black, decoration: TextDecoration.underline),
+            ),
+          ),
+          
           SizedBox(height: 5),
-          Text('Cadastre-se', style: TextStyle(color: Colors.black)),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => EsqueciSenha()),
+              );
+            },
+            child: Text(
+              'Cadastrar',
+              style: TextStyle(color: Colors.black, decoration: TextDecoration.underline),
+            )
+          )
           ],
         ),
       ),
