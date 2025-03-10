@@ -24,7 +24,7 @@ class LoginState extends State<Login> {
 
           children: [
             SizedBox(height: 100),
-            Image.asset('assets/images/LOGO.jpg', width: 200),
+            Image.asset('assets/images/iconepng.png', width: 200),
             const SizedBox(height: 20),
             Text(
               'Login',
@@ -37,7 +37,7 @@ class LoginState extends State<Login> {
 
             SizedBox(height: 15),
             SizedBox(
-              width: 400,
+              width: 350,
               child: Column(
                 children: [
                   TextFormField(
@@ -53,7 +53,7 @@ class LoginState extends State<Login> {
                           width: 1.0,
                         ),
                       ),
-                      hintText: 'Nome',
+                      hintText: 'Email',
                       hintStyle: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -63,7 +63,7 @@ class LoginState extends State<Login> {
 
             SizedBox(height: 50),
             SizedBox(
-              width: 400,
+              width: 350,
               child: Column(
                 children: [
                   TextFormField(
@@ -118,7 +118,7 @@ class LoginState extends State<Login> {
             ),
 
             SizedBox(
-              width: 400,
+              width: 350,
               child: Column(
               children: [
                 SizedBox(height: 50),
