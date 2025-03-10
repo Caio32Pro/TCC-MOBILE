@@ -20,9 +20,13 @@ class _HomepageState extends State<Homepage> {
         currentIndex: 1,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.sports_gymnastics),
+            icon: Icon(Icons.fitness_center),
             label: 'Exercícios',
           ),
+          /*BottomNavigationBarItem(
+            icon: Icon(Icons.sports_gymnastics),
+            label: 'Exercícios',
+          ),*/
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
@@ -30,7 +34,7 @@ class _HomepageState extends State<Homepage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Perfil',
-          ), 
+          ),
         ],
       ),
       

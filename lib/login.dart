@@ -12,13 +12,14 @@ class Login extends StatefulWidget {
 }
 
 class LoginState extends State<Login> {
-  bool _isChecked = false; // Add this line
+  bool _isChecked = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF3E3E3E),
-      body: Center(
+      body: SingleChildScrollView(
+        child: Center(
         child: Column(
 
           children: [
@@ -102,6 +103,7 @@ class LoginState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Checkbox(
+                  checkColor: const Color.fromARGB(255, 255, 255, 255),
                   value: _isChecked, // Update this line
                   onChanged: (value) {
                     setState(() {
@@ -110,7 +112,7 @@ class LoginState extends State<Login> {
                   },
                 ),
                 SizedBox(height: 10),
-                Text('Remember me', style: TextStyle(color: Colors.black)), //fazer depois
+                Text('Remember me', style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255))), //fazer depois
                 SizedBox(height: 50),
               ],
             ),
@@ -147,7 +149,7 @@ class LoginState extends State<Login> {
             },
             child: Text(
               'Esqueci minha senha',
-              style: TextStyle(color: Colors.black, decoration: TextDecoration.underline),
+              style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255), decoration: TextDecoration.underline),
             ),
           ),
           
@@ -161,12 +163,15 @@ class LoginState extends State<Login> {
             },
             child: Text(
               'Cadastrar',
-              style: TextStyle(color: Colors.black, decoration: TextDecoration.underline),
+              style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255), decoration: TextDecoration.underline),
             )
           )
           ],
         ),
       ),
+    ),
     );
   }
 }
+
+      
