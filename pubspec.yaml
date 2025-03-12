@@ -27,6 +27,7 @@ flutter:
     - assets/images/LOGO.jpg
     - assets/images/iconepng.png
     - assets/images/icone2png.png
+    - assets/images/FotoCaio.png
   fonts:
     - family: BreeSerif
       fonts:
