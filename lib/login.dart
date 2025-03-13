@@ -127,10 +127,10 @@ class LoginState extends State<Login> {
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage()));
                 },
-                child: const Text('Login', style: TextStyle(color: Color(0xFF49454F),fontWeight: FontWeight.bold, fontSize: 15)),
+                child: const Text('Login', style: TextStyle(color: Color.fromARGB(255, 0, 0, 0),fontWeight: FontWeight.bold, fontSize: 15)),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFFc8c8c8), //cor do texto dos botões "Color(0xFFc8c8c8)"
-                  fixedSize: Size(400, 45),
+                  backgroundColor: Color(0xFFFF5500), //cor do texto dos botões "Color(0xFFc8c8c8)"
+                  fixedSize: Size(400, 55),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
@@ -140,7 +140,7 @@ class LoginState extends State<Login> {
             )
           ),
           
-          SizedBox(height: 5),
+          SizedBox(height: 10),
           GestureDetector(
             onTap: () {
               Navigator.push(
@@ -154,7 +154,7 @@ class LoginState extends State<Login> {
             ),
           ),
           
-          SizedBox(height: 5),
+          SizedBox(height: 10),
           GestureDetector(
             onTap: () {
               Navigator.push(
@@ -162,7 +162,8 @@ class LoginState extends State<Login> {
                 MaterialPageRoute(builder: (context) => Cadastro()),
               );
             },
-            child: Text(
+            child:
+            Text(
               'Cadastrar',
               style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255), decoration: TextDecoration.underline),
             ),
