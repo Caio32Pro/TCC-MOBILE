@@ -4,7 +4,7 @@ import 'package:tcc_mobile/config.dart';
 import 'package:tcc_mobile/exercicios.dart';
 import 'package:tcc_mobile/homepage.dart';
 import 'package:tcc_mobile/login.dart';
-import 'package:tcc_mobile/perfilMudar.dart';
+import 'package:tcc_mobile/perfilmudar.dart';
 
 class Perfil extends StatefulWidget {
   const Perfil({super.key});
