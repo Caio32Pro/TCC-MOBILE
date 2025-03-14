@@ -1,4 +1,4 @@
-name: tcc_mobile
+name: GymGuru
 description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -22,7 +22,7 @@ dev_dependencies:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/images/iconepng.png"
+  image_path: "assets/images/LOGO.jpg"
 
 
 flutter:

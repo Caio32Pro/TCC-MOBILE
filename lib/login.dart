@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tcc_mobile/cadastrar.dart';
-import 'package:tcc_mobile/homepage.dart';
-import 'package:tcc_mobile/esqueci.dart'; // Add this import
+import 'package:GymGuru/cadastrar.dart';
+import 'package:GymGuru/homepage.dart';
+import 'package:GymGuru/esqueci.dart'; // Add this import
 
 bool isHidden = true;
 

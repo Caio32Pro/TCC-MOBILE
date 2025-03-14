@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tcc_mobile/login.dart';
+import 'package:GymGuru/login.dart';
 
 class EsqueciSenha extends StatelessWidget {
   const EsqueciSenha({super.key});

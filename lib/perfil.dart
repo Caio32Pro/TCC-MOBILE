@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:tcc_mobile/ajuda.dart';
-import 'package:tcc_mobile/config.dart';
-import 'package:tcc_mobile/exercicios.dart';
-import 'package:tcc_mobile/homepage.dart';
-import 'package:tcc_mobile/login.dart';
-import 'package:tcc_mobile/perfilmudar.dart';
+import 'package:GymGuru/ajuda.dart';
+import 'package:GymGuru/config.dart';
+import 'package:GymGuru/exercicios.dart';
+import 'package:GymGuru/homepage.dart';
+import 'package:GymGuru/login.dart';
+import 'package:GymGuru/perfilmudar.dart';
 
 class Perfil extends StatefulWidget {
   const Perfil({super.key});
