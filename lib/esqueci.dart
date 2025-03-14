@@ -73,7 +73,6 @@ class EsqueciSenha extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));          
                     },
-                    child: Text('Enviar', style: TextStyle(color: Colors.black),),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFFc8c8c8),
                       padding: EdgeInsets.symmetric(horizontal: 40.0),
@@ -81,6 +80,7 @@ class EsqueciSenha extends StatelessWidget {
                         borderRadius: BorderRadius.circular(50),
                       ),
                     ),
+                    child: Text('Enviar', style: TextStyle(color: Colors.black),),
                   ),
                 ],
               ),
