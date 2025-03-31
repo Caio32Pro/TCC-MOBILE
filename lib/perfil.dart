@@ -125,72 +125,72 @@ class _PerfilState extends State<Perfil> {
               ],
             ),
             Column(
-          children: [
-            SizedBox(height: 50),
-            Container(
+              children: [
+                SizedBox(height: 50),
+                Container(
 
-              width: constraints.maxWidth * 0.8,
-              height: constraints.maxHeight * 0.9,
-              
-              decoration: BoxDecoration(
-                color: Color(0xFF2B2B2B),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              
-              child: Column(
-                children: [
-                  SizedBox(height: 100),
-                  CircleAvatar(
-                    radius: 100,
-                    backgroundImage: AssetImage('assets/images/FotoCaio.png'),
-                  ),
-
-                  SizedBox(height: 50),
+                  width: constraints.maxWidth * 0.8,
+                  height: constraints.maxHeight * 0.9,
                   
-                  Text('Caio Franco',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 45,
-                    ),
+                  decoration: BoxDecoration(
+                    color: Color(0xFF2B2B2B),
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  Text('caio32823@gmail.com'
-                    ,style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
-                  ),
+                  
+                  child: Column(
+                    children: [
+                      SizedBox(height: 100),
+                      CircleAvatar(
+                        radius: 100,
+                        backgroundImage: AssetImage('assets/images/FotoCaio.png'),
+                      ),
 
-                  SizedBox(height: 50),
+                      SizedBox(height: 50),
+                      
+                      Text('Caio Franco',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 45,
+                        ),
+                      ),
+                      Text('caio32823@gmail.com'
+                        ,style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      ),
 
-                  SizedBox(
-                    width: 350,
-                    child: Column(
-                      children: [
-                        SizedBox(height: 50),
-                        ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => MudarPerfil()));
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xFFc8c8c8), //cor do texto dos botões "Color(0xFFc8c8c8)"
-                          fixedSize: Size(200, 35),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(60),
-                          ),
-                        ),
-                        child: const Text('Edit Profile', 
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 255, 255, 255),
-                            fontWeight: FontWeight.bold, 
-                            fontSize: 25)),
-                        ),
-                      ],
-                    )
+                      SizedBox(height: 50),
+
+                      SizedBox(
+                        width: 350,
+                        child: Column(
+                          children: [
+                            SizedBox(height: 50),
+                            ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => MudarPerfil()));
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xFFc8c8c8),
+                              fixedSize: Size(200, 35),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(60),
+                              ),
+                            ),
+                            child: const Text('Edit Profile', 
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 0, 0, 0),
+                                fontWeight: FontWeight.bold, 
+                                fontSize: 25)),
+                            ),
+                          ],
+                        )
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            ),
-          ],
+                ),
+              ],
             ),
           ],
         ),
