@@ -29,10 +29,10 @@ class _TreinoState extends State<Treino> {
           ),
         ),
         centerTitle: true,
-         bottom: PreferredSize(
+        bottom: PreferredSize(
         preferredSize: Size.fromHeight(4.0),
         child: Container(
-          color: const Color.fromARGB(255, 0, 0, 0),
+          color: Color.fromARGB(255, 0, 0, 0),
           height: 1.0,
         ),
       ),
@@ -126,16 +126,25 @@ class _TreinoState extends State<Treino> {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 255, 255, 255),
+                color: Color(0xFF2B2B2B),
                 
               ),
+              height: 80,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
                     decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
                       shape: BoxShape.rectangle,
-                      color: Color(0xFFFF5500),
+                      color: Color(0xFF3E3E3E),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                     width: 60,
@@ -143,7 +152,7 @@ class _TreinoState extends State<Treino> {
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFFFF5500),
+                        backgroundColor: Color(0xFF3E3E3E),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15),
                         ),
@@ -157,11 +166,18 @@ class _TreinoState extends State<Treino> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 25),
                   Container(
                     decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
                       shape: BoxShape.rectangle,
-                      color: Color(0xFFFF5500),
+                      color: Color(0xFF3E3E3E),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                     width: 60,
@@ -169,7 +185,7 @@ class _TreinoState extends State<Treino> {
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFFFF5500),
+                        backgroundColor: Color(0xFF3E3E3E),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15),
                         ),
@@ -183,8 +199,76 @@ class _TreinoState extends State<Treino> {
                       ),
                     ),
                   ),
+                  Container(
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                      shape: BoxShape.rectangle,
+                      color: Color(0xFF3E3E3E),
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                    ),
+                    width: 60,
+                    height: 60,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFF3E3E3E),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      child: Text(
+                        "C",
+                        style: TextStyle(
+                          color: const Color.fromARGB(255, 0, 0, 0),
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                      shape: BoxShape.rectangle,
+                      color: Color(0xFF3E3E3E),
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                    ),
+                    width: 60,
+                    height: 60,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFF3E3E3E),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      child: Text(
+                        "D",
+                        style: TextStyle(
+                          color: const Color.fromARGB(255, 0, 0, 0),
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
+              
+            //continuar aqui
             )
           ],
         ),
