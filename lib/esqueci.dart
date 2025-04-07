@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:GymGuru/login.dart';
-import 'package:flutter_email_sender/flutter_email_sender.dart';
+//import 'package:flutter_email_sender/flutter_email_sender.dart';
+import 'package:mailer/mailer.dart';
+import 'package:mailer/smtp_server.dart';
 
 class EsqueciSenha extends StatefulWidget {
   const EsqueciSenha({super.key});
@@ -9,28 +11,29 @@ class EsqueciSenha extends StatefulWidget {
   EsqueciSenhaState createState() => EsqueciSenhaState();
 }
 
+void sendEmail() async {
+  String username = 'gymgurumail@gmail.com';
+  String password = 'GymGuru123';
+
+  final smtpServer = gmail(username, password);
+
+  // Create the email message
+  final message = Message()
+    ..from = Address(username, 'GymGuru')
+    ..recipients.add('recipient@example.com')
+    ..subject = 'Password Reset Request'
+    ..text = 'This is an automated email to reset your password.';
+
+  try {
+    final sendReport = await send(message, smtpServer);
+    print('Message sent: ' + sendReport.toString());
+  } on MailerException catch (e) {
+    print('Message not sent. \n' + e.toString());
+  }
+}
+
 class EsqueciSenhaState extends State<EsqueciSenha> {
   final TextEditingController _emailController = TextEditingController();
-
-  Future<void> sendEmail(String recipient) async {
-    final Email email = Email(
-      body: 'Olá,\n\nRecebemos uma solicitação para redefinir sua senha. Clique no link abaixo para criar uma nova senha:\n\n[INSIRA O LINK AQUI]\n\nSe você não solicitou a redefinição de senha, ignore este e-mail.\n\nAtenciosamente,\nEquipe GymGuru',
-      subject: 'Redefinição de Senha - GymGuru',
-      recipients: [recipient],
-      isHTML: false,
-    );
-
-    try {
-      await FlutterEmailSender.send(email);
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Email enviado com sucesso!')),
-      );
-    } catch (error) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Erro ao enviar o email: $error')),
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -92,18 +95,18 @@ class EsqueciSenhaState extends State<EsqueciSenha> {
                 width: 350,
                 child: ElevatedButton(
                   onPressed: () {
-                    final email = _emailController.text.trim();
-                    if (email.isNotEmpty) {
-                      sendEmail(email);
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Login()),
-                      );
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('Por favor, insira um email válido.')),
-                      );
-                    }
+                    // Send the email
+                    sendEmail();
+                    // Show a success message
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Email enviado com sucesso!'),
+                        backgroundColor: Colors.green,
+                      ),
+                    );
+                    // Navigate to the login page
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFFc8c8c8),
@@ -115,6 +118,7 @@ class EsqueciSenhaState extends State<EsqueciSenha> {
                   child: Text('Enviar', style: TextStyle(color: Colors.black)),
                 ),
               ),
+              SizedBox(height: 50),
             ],
           ),
         ),
