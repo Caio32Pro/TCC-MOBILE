@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:GymGuru/ajuda.dart';
-import 'package:GymGuru/config.dart';
-import 'package:GymGuru/exercicios.dart';
-import 'package:GymGuru/login.dart';
-import 'package:GymGuru/perfil.dart';
+import 'package:GymGuru/secundario/ajuda.dart';
+import 'package:GymGuru/secundario/config.dart';
+import 'package:GymGuru/principal/exercicios.dart';
+import 'package:GymGuru/principal/login.dart';
+import 'package:GymGuru/principal/perfil.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});

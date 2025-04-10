@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:GymGuru/login.dart';
+import 'package:GymGuru/principal/login.dart';
 
 void main() {
   runApp(const MyApp());

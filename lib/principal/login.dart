@@ -1,7 +1,8 @@
+import 'package:GymGuru/classes/usuario.dart';
 import 'package:flutter/material.dart';
-import 'package:GymGuru/cadastrar.dart';
-import 'package:GymGuru/homepage.dart';
-import 'package:GymGuru/esqueci.dart';
+import 'package:GymGuru/secundario/cadastrar.dart';
+import 'package:GymGuru/principal/homepage.dart';
+import 'package:GymGuru/secundario/esqueci.dart';
 
 bool isHidden = true;
 
