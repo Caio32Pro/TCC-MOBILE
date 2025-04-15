@@ -1,4 +1,4 @@
-import 'package:GymGuru/principal/login.dart';
+import 'package:GymGuru/Usuario/principal/login.dart';
 import 'package:flutter/material.dart';
 
 bool isHidden = true;

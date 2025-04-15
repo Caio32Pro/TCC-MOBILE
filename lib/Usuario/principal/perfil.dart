@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:GymGuru/secundario/ajuda.dart';
-import 'package:GymGuru/secundario/config.dart';
-import 'package:GymGuru/principal/exercicios.dart';
-import 'package:GymGuru/principal/homepage.dart';
-import 'package:GymGuru/principal/login.dart';
-import 'package:GymGuru/secundario/perfilmudar.dart';
+import 'package:GymGuru/Usuario/secundario/ajuda.dart';
+import 'package:GymGuru/Usuario/secundario/config.dart';
+import 'package:GymGuru/Usuario/principal/exercicios.dart';
+import 'package:GymGuru/Usuario/principal/homepage.dart';
+import 'package:GymGuru/Usuario/principal/login.dart';
+import 'package:GymGuru/Usuario/secundario/perfilmudar.dart';
 
 class Perfil extends StatefulWidget {
   const Perfil({super.key});

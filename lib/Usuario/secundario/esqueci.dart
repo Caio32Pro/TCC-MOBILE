@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:GymGuru/principal/login.dart';
+import 'package:GymGuru/Usuario/principal/login.dart';
 //import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:mailer/mailer.dart';
 import 'package:mailer/smtp_server.dart';

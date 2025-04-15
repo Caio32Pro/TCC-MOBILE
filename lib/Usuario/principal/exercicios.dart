@@ -1,8 +1,8 @@
-import 'package:GymGuru/secundario/ajuda.dart';
-import 'package:GymGuru/secundario/config.dart';
-import 'package:GymGuru/principal/homepage.dart';
-import 'package:GymGuru/principal/login.dart';
-import 'package:GymGuru/principal/perfil.dart';
+import 'package:GymGuru/Usuario/secundario/ajuda.dart';
+import 'package:GymGuru/Usuario/secundario/config.dart';
+import 'package:GymGuru/Usuario/principal/homepage.dart';
+import 'package:GymGuru/Usuario/principal/login.dart';
+import 'package:GymGuru/Usuario/principal/perfil.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 //import 'package:carousel_slider/carousel_slider.dart';
