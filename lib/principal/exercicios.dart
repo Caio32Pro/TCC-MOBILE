@@ -15,7 +15,6 @@ class Treino extends StatefulWidget {
 }
 
 class _TreinoState extends State<Treino> {
-  // Track the currently selected button
   String selectedButton = "";
 
   @override
@@ -329,7 +328,7 @@ class _TreinoState extends State<Treino> {
                           progressColor: Colors.deepOrange,
                           ),
                           Positioned(
-                          left: 250.0 * 0.4 - 20, // Adjust position based on percentage
+                          left: 250.0 * 0.4 - 20,
                           child: Text(
                             '40%',
                             style: TextStyle(color: Colors.white, fontSize: 16),

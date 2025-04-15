@@ -14,29 +14,51 @@ class Login extends StatefulWidget {
 }
 
 class LoginState extends State<Login> {
-  GlobalKey<FormState> login = GlobalKey<FormState>(); // Chave global para o Form
+  GlobalKey<FormState> login = GlobalKey<FormState>();
   bool _isChecked = false;
-  TextEditingController nomeController = TextEditingController();
+  TextEditingController senhaController = TextEditingController();
   TextEditingController emailController = TextEditingController();
 
   List<Usuario> loginFake = [
-    Usuario(nome: 'Caio', email: 'caio32823@gmail.com', senha: 'Caca28081.')
+    Usuario(
+      nome: 'Caio', 
+      email: 'caio32823@gmail.com', 
+      senha: 'Caca28081.'
+    ),
+    Usuario (
+      nome: 'Lucas', 
+      email: 'lucashenrique@gmail.com',
+      senha: '12345678'
+    ),
+    Usuario(
+      nome: 'Ray',
+      email: 'rayanthony@gmail.com',
+      senha: '12345678'
+    )
   ];
 
-  void verificaLogin(){
-  loginFake.forEach(action) {
-    if (action.getEmail == emailController.text && action.getSenha == nomeController.text) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => HomePage()),
-      );
-    } else {
+  void realizarLogin(String emailDigitado, String senhaDigitada, BuildContext context) {
+    bool loginSucesso = false;
+
+    loginFake.forEach((usuario) {
+      if (usuario.email == emailDigitado && usuario.senha == senhaDigitada) {
+        loginSucesso = true;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Login realizado com sucesso!')),
+        );
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => Homepage()),
+        );
+      }
+    });
+
+    if (!loginSucesso) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Email ou senha incorretos!'),
-          duration: Duration(seconds: 2),
-        ),
+        SnackBar(content: Text('Email ou senha incorretos')),
       );
+      emailController.clear();
+      senhaController.clear();
     }
   }
 
@@ -70,7 +92,7 @@ class LoginState extends State<Login> {
                     SizedBox(
                       width: screenWidth * 0.9,
                       child: TextFormField(
-                        controller: nomeController,
+                        controller: emailController,
                         textAlign: TextAlign.center,
                         decoration: InputDecoration(
                           fillColor: Color(0xFFc8c8c8),
@@ -107,7 +129,7 @@ class LoginState extends State<Login> {
                     SizedBox(
                       width: screenWidth * 0.9,
                       child: TextFormField(
-                        controller: emailController,
+                        controller: senhaController,
                         textAlign: TextAlign.center,
                         decoration: InputDecoration(
                           fillColor: Color(0xFFc8c8c8),
@@ -171,10 +193,7 @@ class LoginState extends State<Login> {
                 width: screenWidth * 0.9,
                 child: ElevatedButton(
                   onPressed: () {
-                    if (login.currentState!.validate()) {
-                      String email = emailController.text;
-                      String nome = nomeController.text;
-                    }
+                    realizarLogin(emailController.text, senhaController.text, context);                    
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFFFF5500),
