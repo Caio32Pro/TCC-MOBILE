@@ -57,13 +57,19 @@ class LoginState extends State<Login> {
       }
     });
 
-    if (!loginSucesso) {
+    if(!loginSucesso && emailDigitado.isEmpty && senhaDigitada.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Preencha todos os campos')),
+      );
+    }
+    else if (!loginSucesso) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Email ou senha incorretos')),
       );
       emailController.clear();
       senhaController.clear();
     }
+    
   }
 
   @override
@@ -193,7 +199,7 @@ class LoginState extends State<Login> {
                   SizedBox(height: 50),
                 ],
                 ),*/
-
+              SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -209,6 +215,7 @@ class LoginState extends State<Login> {
               SizedBox(height: 20),
                 ],
               ),
+              SizedBox(height: 10),
               SizedBox(
                 width: screenWidth * 0.9,
                 child: ElevatedButton(

@@ -1,3 +1,4 @@
+import 'package:GymGuru/Usuario/principal/exercicios.dart';
 import 'package:flutter/material.dart';
 import 'package:GymGuru/geral/login.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black, secondary: Colors.black, primary: Colors.black),
         fontFamily: 'BreeSerif', 
       ),
-      home: Login(),
+      home: Treino(),
     );
   }
 }

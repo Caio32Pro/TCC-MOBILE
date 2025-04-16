@@ -118,10 +118,12 @@ class _TreinoState extends State<Treino> {
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
         ],
       ),
+
       body: Center(
         child: Column(
           children: [
             Container(
+
               //botões de seleção
               decoration: BoxDecoration(color: Color(0xFF2B2B2B)),
               height: 80,
@@ -297,51 +299,48 @@ class _TreinoState extends State<Treino> {
                   ),
                 ],
               ),
+
             ), //botões de seleção
-            Divider(color: Colors.black, thickness: 0.0, height: 1),
+            Divider(color: Colors.black, thickness: 1.0, height: 1),
             Container(
               decoration: BoxDecoration(color: Color(0xFF3E3E3E)),
+              height: 100,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Progresso do treino:',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                  SizedBox(height: 10),
-
-                  // Progress bar
-                  Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                      SizedBox(width: 10),
-                        Stack(
-                        alignment: Alignment.centerLeft,
-                        children: [
-                          LinearPercentIndicator(
-                          alignment: MainAxisAlignment.center,
-                          width: 250.0,
-                          lineHeight: 5.0,
-                          percent: 0.4,
-                          backgroundColor: Colors.white,
-                          progressColor: Colors.deepOrange,
-                          ),
-                          Positioned(
-                          left: 250.0 * 0.4 - 20,
-                          child: Text(
-                            '40%',
-                            style: TextStyle(color: Colors.white, fontSize: 16),
-                          ),
-                          ),
-                        ],
-                        ),
-                      ],
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                'Progresso do treino:',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                SizedBox(height: 10),
+                
+                // Progress bar
+                Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                  SizedBox(width: 10),
+                  Stack(
+                    alignment: Alignment.centerLeft,
+                    children: [
+                    LinearPercentIndicator(
+                    alignment: MainAxisAlignment.center,
+                    width: 250.0,
+                    lineHeight: 5.0,
+                    percent: 0.4,
+                    backgroundColor: Colors.white,
+                    progressColor: Colors.deepOrange,
                     ),
+                    ],
                   ),
-                ],
+                  ],
+                ),
+                ),
+              ],
               ),
             ),
+            SizedBox(height: 10), // Add space between the container and the divider
+            Divider(height: 20, thickness: 5, indent: 20, endIndent: 0, color: Colors.black),
           ],
         ),
       ),
