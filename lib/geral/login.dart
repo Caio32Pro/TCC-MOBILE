@@ -1,8 +1,10 @@
 import 'package:GymGuru/Usuario/classes/usuario.dart';
+import 'package:GymGuru/remember_me_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:GymGuru/Usuario/principal/cadastrar.dart';
 import 'package:GymGuru/Usuario/principal/homepage.dart';
 import 'package:GymGuru/Usuario/secundario/esqueci.dart';
+import 'package:get/get.dart';
 
 bool isHidden = true;
 
@@ -14,8 +16,10 @@ class Login extends StatefulWidget {
 }
 
 class LoginState extends State<Login> {
+
+  final RememberMeController controller = Get.put(RememberMeController());
+
   GlobalKey<FormState> login = GlobalKey<FormState>();
-  bool _isChecked = false;
   TextEditingController senhaController = TextEditingController();
   TextEditingController emailController = TextEditingController();
 
@@ -172,21 +176,37 @@ class LoginState extends State<Login> {
                   ],
                 ),
               ),
-              Row(
+                /*Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Checkbox(
-                    checkColor: const Color.fromARGB(255, 255, 255, 255),
-                    value: _isChecked,
-                    onChanged: (value) {
-                      setState(() {
-                        _isChecked = value!;
-                      });
-                    },
+                  checkColor: const Color.fromARGB(255, 255, 255, 255),
+                  value: _isChecked,
+                  onChanged: (value) {
+                    setState(() {
+                    _isChecked = value!;
+                    });
+                  },
                   ),
                   SizedBox(height: 10),
                   Text('Remember me', style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255))),
                   SizedBox(height: 50),
+                ],
+                ),*/
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Obx(
+                () => Checkbox(
+                  value: controller.rememberMe.value,
+                  onChanged: (value){
+                    controller.toggleRememberMe(value!);
+                  },
+                )
+              ),
+              Text('Remember me', style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255))),
+              SizedBox(height: 20),
                 ],
               ),
               SizedBox(

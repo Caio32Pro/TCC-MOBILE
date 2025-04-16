@@ -3,7 +3,7 @@ import 'package:GymGuru/Usuario/secundario/ajuda.dart';
 import 'package:GymGuru/Usuario/secundario/config.dart';
 import 'package:GymGuru/Usuario/principal/exercicios.dart';
 import 'package:GymGuru/Usuario/principal/homepage.dart';
-import 'package:GymGuru/Usuario/principal/login.dart';
+import 'package:GymGuru/geral/login.dart';
 import 'package:GymGuru/Usuario/secundario/perfilmudar.dart';
 
 class Perfil extends StatefulWidget {

@@ -1,4 +1,4 @@
-import 'package:GymGuru/Usuario/principal/login.dart';
+import 'package:GymGuru/geral/login.dart';
 import 'package:flutter/material.dart';
 
 bool isHidden = true;
@@ -236,7 +236,9 @@ class _CadastroState extends State<Cadastro> {
                             value: isChecked,
                             onChanged: (value) {
                               setState(() {
-                                isChecked = value!;
+                                if(isChecked = value!) {
+                                  isChecked2 = false;
+                                }
                               });
                             },
                           ),
@@ -248,7 +250,9 @@ class _CadastroState extends State<Cadastro> {
                             value: isChecked2,
                             onChanged: (value) {
                               setState(() {
-                                isChecked2 = value!;
+                                if(isChecked2 = value!) {
+                                  isChecked = false;
+                                }
                               });
                             },
                           ),
