@@ -343,32 +343,195 @@ class _TreinoState extends State<Treino> {
             // Container with exercise details
             Expanded(
               child: Container(
-              margin: EdgeInsets.only(top: 30, left: 30, right: 30),
-              decoration: BoxDecoration(color: Color(0xFF2B2B2B)),
-              child: Center(
-                child: Column(
-                //mainAxisSize: MainAxisSize.min, // Center vertically
-                children: [
-                  Text(
-                  selectedButton.isNotEmpty
-                    ? 'Exercício $selectedButton'
-                    : 'Selecione um exercício',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Descrição do exercício $selectedButton',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
-                ],
-                ),
-              ),
+                margin: EdgeInsets.only(top: 30, left: 30, right: 30),
+                decoration: BoxDecoration(color: Color(0xFF2B2B2B)),
+                child:
+                    selectedButton == "A"
+                        ? CarouselSlider(
+                          options: CarouselOptions(
+                            height: double.infinity,
+                            autoPlay: false,
+                            //enlargeCenterPage: true,
+                            aspectRatio: 1 / 1,
+                            //viewportFraction: 0.8,
+                          ),
+                          items: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Color(0xFF3E3E3E),
+                                //borderRadius: BorderRadius.circular(15),
+                                border: Border.all(color: Colors.black, width: 2),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Exercício A - Slide 1',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Color(0xFF3E3E3E),
+                                //borderRadius: BorderRadius.circular(15),
+                                border: Border.all(color: Colors.black, width: 2),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Exercício A - Slide 2',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                        : selectedButton == "B"
+                        ? CarouselSlider(
+                          options: CarouselOptions(
+                            height: double.infinity,
+                            autoPlay: false,
+                            //enlargeCenterPage: true,
+                            aspectRatio: 1 / 1,
+                            //viewportFraction: 0.8,
+                          ),
+                          items: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Color(0xFF3E3E3E),
+                                //borderRadius: BorderRadius.circular(15),
+                                border: Border.all(color: Colors.black, width: 2),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Exercício B - Slide 1',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Color(0xFF3E3E3E),
+                                //borderRadius: BorderRadius.circular(15),
+                                border: Border.all(color: Colors.black, width: 2),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Exercício B - Slide 2',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                        : selectedButton == "C"
+                        ? CarouselSlider(
+                          options: CarouselOptions(
+                            height: double.infinity,
+                            autoPlay: false,
+                            //enlargeCenterPage: true,
+                            aspectRatio: 1 / 1,
+                            //viewportFraction: 0.8,
+                          ),
+                          items: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Color(0xFF3E3E3E),
+                                //borderRadius: BorderRadius.circular(15),
+                                border: Border.all(color: Colors.black, width: 2),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Exercício C - Slide 1',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Color(0xFF3E3E3E),
+                                //borderRadius: BorderRadius.circular(15),
+                                border: Border.all(color: Colors.black, width: 2),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Exercício C - Slide 2',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                        : selectedButton == "D"
+                        ? CarouselSlider(
+                          options: CarouselOptions(
+                            height: double.infinity,
+                            autoPlay: false,
+                            //enlargeCenterPage: true,
+                            aspectRatio: 1 / 1,
+                            //viewportFraction: 0.8,
+                          ),
+                          items: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Color(0xFF3E3E3E),
+                                //borderRadius: BorderRadius.circular(15),
+                                border: Border.all(color: Colors.black, width: 2),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Exercício D - Slide 1',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Color(0xFF3E3E3E),
+                                //borderRadius: BorderRadius.circular(15),
+                                border: Border.all(color: Colors.black, width: 2),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Exercício D - Slide 2',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                        : Center(
+                          child: Text(
+                            'Selecione um exercício para começar',
+                            style: TextStyle(color: Colors.white, fontSize: 18),
+                          ),
+                        ),
               ),
             ),
             ElevatedButton(
-              onPressed: (){
-
-              },
+              onPressed: () {},
               child: Text(
                 'Iniciar Exercício',
                 style: TextStyle(color: Colors.white, fontSize: 20),
