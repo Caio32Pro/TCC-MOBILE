@@ -5,7 +5,7 @@ import 'package:GymGuru/geral/login.dart';
 import 'package:GymGuru/Usuario/principal/perfil.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-//import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class Treino extends StatefulWidget {
   const Treino({super.key});
@@ -123,7 +123,6 @@ class _TreinoState extends State<Treino> {
         child: Column(
           children: [
             Container(
-
               //botões de seleção
               decoration: BoxDecoration(color: Color(0xFF2B2B2B)),
               height: 80,
@@ -150,7 +149,7 @@ class _TreinoState extends State<Treino> {
                     child: ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          selectedButton = "A";
+                          selectedButton = selectedButton == "A" ? "" : "A";
                         });
                       },
                       style: ElevatedButton.styleFrom(
@@ -192,7 +191,7 @@ class _TreinoState extends State<Treino> {
                     child: ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          selectedButton = "B";
+                          selectedButton = selectedButton == "B" ? "" : "B";
                         });
                       },
                       style: ElevatedButton.styleFrom(
@@ -234,7 +233,7 @@ class _TreinoState extends State<Treino> {
                     child: ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          selectedButton = "C";
+                          selectedButton = selectedButton == "C" ? "" : "C";
                         });
                       },
                       style: ElevatedButton.styleFrom(
@@ -276,7 +275,7 @@ class _TreinoState extends State<Treino> {
                     child: ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          selectedButton = "D";
+                          selectedButton = selectedButton == "D" ? "" : "D";
                         });
                       },
                       style: ElevatedButton.styleFrom(
@@ -299,48 +298,82 @@ class _TreinoState extends State<Treino> {
                   ),
                 ],
               ),
-
             ), //botões de seleção
             Divider(color: Colors.black, thickness: 1.0, height: 1),
             Container(
               decoration: BoxDecoration(color: Color(0xFF3E3E3E)),
-              height: 100,
+              height: 70,
               child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                'Progresso do treino:',
-                style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-                SizedBox(height: 10),
-                
-                // Progress bar
-                Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  SizedBox(width: 10),
-                  Stack(
-                    alignment: Alignment.centerLeft,
-                    children: [
-                    LinearPercentIndicator(
-                    alignment: MainAxisAlignment.center,
-                    width: 250.0,
-                    lineHeight: 5.0,
-                    percent: 0.4,
-                    backgroundColor: Colors.white,
-                    progressColor: Colors.deepOrange,
-                    ),
-                    ],
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Progresso do treino:',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
-                  ],
-                ),
-                ),
-              ],
+                  SizedBox(height: 10),
+
+                  // Progress bar
+                  Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        //SizedBox(width: 10),
+                        Stack(
+                          alignment: Alignment.centerLeft,
+                          children: [
+                            LinearPercentIndicator(
+                              alignment: MainAxisAlignment.center,
+                              width: 250.0,
+                              lineHeight: 5.0,
+                              percent: 0.4,
+                              backgroundColor: Colors.white,
+                              progressColor: Colors.deepOrange,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
-            SizedBox(height: 10), // Add space between the container and the divider
-            Divider(height: 20, thickness: 5, indent: 20, endIndent: 0, color: Colors.black),
+            //SizedBox(height: 10), // Add space between the container and the divider
+            Divider(height: 1, thickness: 1.0, color: Colors.black),
+
+            // Container with exercise details
+            Expanded(
+              child: Container(
+              margin: EdgeInsets.only(top: 30, left: 30, right: 30),
+              decoration: BoxDecoration(color: Color(0xFF2B2B2B)),
+              child: Center(
+                child: Column(
+                //mainAxisSize: MainAxisSize.min, // Center vertically
+                children: [
+                  Text(
+                  selectedButton.isNotEmpty
+                    ? 'Exercício $selectedButton'
+                    : 'Selecione um exercício',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Descrição do exercício $selectedButton',
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                ],
+                ),
+              ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: (){
+
+              },
+              child: Text(
+                'Iniciar Exercício',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
           ],
         ),
       ),
